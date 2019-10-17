@@ -1,0 +1,133 @@
+/*
+ *  Tooltip Styling
+ *  Will Z
+ *  https://github.com/sactowilly/CSS-Tooltip-in-Wordpress
+ *  Issues: https://github.com/sactowilly/CSS-Tooltip-in-Wordpress/issues
+ *  Inspired/copied from w3schools
+ *  Use requires a div tooltip class wrapper around a tooltip text class:
+ *  div class="tooltip"
+ *   Text for tip or img src
+ *    span class="tooltiptext"   Enter the tip here.
+ *    /span
+ *  /div
+ */
+
+.tooltip {
+  /* This is the 'trigger' that will activate the tooltip */
+  position: relative;
+  display: inline-block;
+
+  /* Changes the cursor to a question mark */
+  cursor: help;
+  /* Changes the cursor to a pointed finger */
+  /* cursor: pointer; */
+  /* Changes the cursor to a little menu looking thing */
+  /* cursor: context-menu; */
+
+  /* Decorate the hover text so people know it does something */
+  /* border-bottom: 1px dotted black;  */
+  /* Add a black, 1px dotted line under the hover item/text */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  /* Tooltip Box visibility. Hides the tooltip until they trigger it */
+  width: 180px;
+  /* Tooltip Container width. Adjust for your use */
+  background-color: rgba(255, 255, 50, 0.75);
+  /* Tooltip background color. This is in RGBAlpha */
+  color: #000;
+  /* Tooltip Text color. Hex or name */
+  font-size: 12px !important;
+  /* Tooltip Font size. I used !important to ensure it is the size I needed */
+  text-align: center;
+  /* Tooltip Text alignment. left, center, right, justify */
+
+  /* Tooltip Box borders. Sections are pretty self-explanatory */
+  border-color: black;
+  /* Hex or name */
+  border-width: .5px;
+  border-style: solid;
+  /* dotted, solid, etc */
+  border-radius: 6px;
+
+  /* Placement of the tooltip box. This is on top of the trigger */
+  padding: 2px 2px 2px 2px;
+  position: absolute;
+  z-index: 1;
+  /* Not sure? Look up z-index :) */
+
+  /* Moving the tooltip box: above, left, right, or below??? */
+  bottom: 100%;
+  /* This raises the box up by the actual height of the box */
+  left: 50%;
+  /* This moves the box left by half the size */
+  margin-left: -90px;
+  /* And this sets the margin to the side we need. Make it 1/2 your width */
+  /* To move it to the bottom, change bottom to top: 100%;
+                            /* 
+                             * To make it simple and left, get rid of bottom, left, and margin-left and add:
+                             * top: -1px; 
+                             * right: 105%;
+                             * To make it simple and to the right, get rid of same stuff and add:
+                             * top: -1px; 
+                             * left: 105%; 
+                             */
+
+  /* 
+   * Fade in tooltip 
+   * The time it takes to go from 0% to 100% opacity
+   * .5s takes half a second 
+   * 1s takes 1 second 
+   */
+  opacity: 0;
+  transition: opacity .25s;
+  /* This is the speed of the transition, or 1/4 of a second */
+}
+
+/* The magic of hovering over the trigger */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  /* POOF! There it is */
+  opacity: 1;
+  /* 1 = 100% visible */
+  ;
+}
+
+.tooltip .tooltiptext::after {
+  /* Make the arrow/triangle that points from the tooltip box */
+  content: " ";
+  position: absolute;
+
+  /* Position the arrow/triangle */
+  /* BOTTOM of the tooltip
+   *  top: 100%;
+   *  left: 50%;
+   *  margin-left: -5px;
+   *  border-color: black transparent transparent transparent;
+   *
+   * TOP of the tooltip (when the tooltip is below)
+   *  bottom: 100%;
+   *  border-color: transparent transparent black transparent;
+   * 
+   * RIGHT of the tooltip (when placed to the left)
+   *  top: 50%;
+   *  right: 100%; 
+   *  margin-top: -5px;
+   *  border-color: transparent transparent transparent black;
+   * 
+   * LEFT of the tooltip (when placed to the right)
+   *  top: 50%;
+   *  left: 100%; 
+   *  margin-top: -5px;
+   *  border-color: transparent black transparent transparent;
+   */
+
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  /* This is the size of the arrow. Change it if you change margin- to match */
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}

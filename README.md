@@ -6,7 +6,7 @@ Specifically, a client wanted tooltips on a pricing table (ARPrice Lite, a worth
 
 ## Use 
 ### CSS 
-Place the .css in your theme's (more prudent, the child theme's)style.css file, or add it using Appearance => Customize and look for where you can add custom CSS. 
+Place the .css in your theme's (more prudent, the child theme's)style.css file, or add it using Appearance => Customize and look for where you can add custom CSS. You can also toss it in the <head></head> between some <style></style>
 #### Don't know CSS? 
 If you're not CSS savvy, try TJ Custom CSS (free), SiteOrigin CSS (free, and some other great plugins), or whatever floats your boat.
 #### Customizing your tooltips 
@@ -15,10 +15,12 @@ The CSS is pretty well commented so I hope that helps you figure out what you wa
 Wrap the item you want the tool tip to be for in a div with the tooltip class `<div class="tooltip"></div>`. Next, span the tooltiptext class in that div around the text you want the tool tip to be: `<span class="tooltiptext">This is the tooltip text that appears wherever you want it to.</span>`.
 So each item with a tool tip looks like this:
 
-<p>This is some random <div class="tooltip">text<span class="tooltiptext">Not so random, huh?</span> in a random sentence.</div>
+<p><div class="tooltip">Random text<span class="tooltiptext">Not so random, huh?</span> in a random sentence.</div>
 
 For me, I added the HTML in ARPriceLite's Description field at attached it to an image:
 
 <div class="tooltip"><img src="http://a1solarsolutions.com/wp-content/uploads/2019/10/checkmark-e1571034086101.png"><span class="tooltiptext">Typically there is no lien, but some of the less popular ownership programs may require you to put up your home as collateral.</span></div>
+
+Mind you, the tool tip text is hidden by the `visibility: hidden; opacity: 0;` part of the css and becomes visible (`visibility: visible; opacity: 1;`) when the cursor hovers over the trigger portion of the page.
 
 It isn't anywhere as easy as using the tooltip feature in their Premium plugin, but for one table on one site that may never get updated... it was worth it.
