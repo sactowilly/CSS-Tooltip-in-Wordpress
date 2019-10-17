@@ -24,3 +24,7 @@ For me, I added the HTML in ARPriceLite's Description field at attached it to an
 Mind you, the tool tip text is hidden by the `visibility: hidden; opacity: 0;` part of the css and becomes visible (`visibility: visible; opacity: 1;`) when the cursor hovers over the trigger portion of the page.
 
 It isn't anywhere as easy as using the tooltip feature in their Premium plugin, but for one table on one site that may never get updated... it was worth it.
+
+P.S. If you're looking for a great deal on going solar, call Eric, Brian, and the crew at A1 Solar Solutions. Tell them *_Will mentioned it to you_*. (Hell yes I want the referral kudos here!). 
+
+http://a1solarsolutions.com - based in sunny Sacramento with installs from sea to shining sea. See why you should Go the A1 Way!
