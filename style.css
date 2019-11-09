@@ -30,6 +30,7 @@
 }
 
 .tooltip .tooltiptext {
+  /* This is for the rent to own table */
   visibility: hidden;
   /* Tooltip Box visibility. Hides the tooltip until they trigger it */
   width: 180px;
@@ -85,8 +86,65 @@
   /* This is the speed of the transition, or 1/4 of a second */
 }
 
+.tooltip .whya1text {
+  /* This is for the Why A1 section on the homepage */
+  visibility: hidden;
+  /* Tooltip Box visibility. Hides the tooltip until they trigger it */
+  width: 100%;
+  /* Tooltip Container width. Adjust for your use */
+  background-color: rgba(255, 255, 50, 0.75);
+  /* Tooltip background color. This is in RGBAlpha */
+  color: #000;
+  /* Tooltip Text color. Hex or name */
+  font-size: 16px !important;
+  /* Tooltip Font size. I used !important to ensure it is the size I needed */
+  text-align: center;
+  /* Tooltip Text alignment. left, center, right, justify */
+
+  /* Tooltip Box borders. Sections are pretty self-explanatory */
+  border-color: black;
+  /* Hex or name */
+  border-width: .5px;
+  border-style: solid;
+  /* dotted, solid, etc */
+  border-radius: 6px;
+
+  /* Placement of the tooltip box. This is on top of the trigger */
+  padding: 2px 2px 2px 2px;
+  position: absolute;
+  z-index: 1;
+  /* Not sure? Look up z-index :) */
+
+  /* Moving the tooltip box: above, left, right, or below??? */
+  top: 100%;
+  /* This raises the box up by the actual height of the box */
+  left: 50%;
+  /* This moves the box left by half the size */
+  margin-left: -50%;
+  /* And this sets the margin to the side we need. Make it 1/2 your width */
+  /* To move it to the bottom, change bottom to top: 100%;
+                            /* 
+                             * To make it simple and left, get rid of bottom, left, and margin-left and add:
+                             * top: -1px; 
+                             * right: 105%;
+                             * To make it simple and to the right, get rid of same stuff and add:
+                             * top: -1px; 
+                             * left: 105%; 
+                             */
+
+  /* 
+   * Fade in tooltip 
+   * The time it takes to go from 0% to 100% opacity
+   * .5s takes half a second 
+   * 1s takes 1 second 
+   */
+  opacity: 0;
+  transition: opacity .25s;
+  /* This is the speed of the transition, or 1/4 of a second */
+}
+
 /* The magic of hovering over the trigger */
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext, .tooltip:hover .whya1text {
   visibility: visible;
   /* POOF! There it is */
   opacity: 1;
@@ -94,7 +152,7 @@
   ;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .whya1text::after, .tooltip .tooltiptext::after {
   /* Make the arrow/triangle that points from the tooltip box */
   content: " ";
   position: absolute;
@@ -123,11 +181,11 @@
    *  border-color: transparent black transparent transparent;
    */
 
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
   /* This is the size of the arrow. Change it if you change margin- to match */
   border-style: solid;
-  border-color: black transparent transparent transparent;
+  border-color: transparent transparent black transparent;
 }
